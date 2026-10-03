@@ -1,0 +1,110 @@
+AI MECH LAB
+AI Course  Beginner Track
+Module 4, Topic 4.1
+Supervised vs. Unsupervised Learning
+
+--- PAGE BREAK ---
+
+Lesson
+You've covered the math and the tools. Now you start the part of this course that's actually about
+machine learning itself  and the first idea you need is the single biggest fork in the road: does your
+model learn from labeled answers, or does it have to find structure on its own? That fork is supervised
+versus unsupervised learning, and almost everything else in ML sits on one side of it or the other.
+What makes learning "supervised"?
+In supervised learning, every example in your training data comes with the correct answer attached.
+You're not just handing the model raw numbers  you're handing it raw numbers
+and
+the outcome you
+want it to learn to predict.
+Take a table of houses:
+Features (size, bedrooms) paired with a known label (price).
+size_sqft and bedrooms are the features  the inputs the model looks at. price is the label  the known,
+correct answer for each row. The model's whole job during training is to find the pattern connecting
+features to label, closely enough that it can guess correctly on a house it's never seen.
+This is "supervised" in a literal sense: a human already worked out the right answer for every training
+example, and the model learns under that supervision.
+How a trained model actually gets used
+Once training is done, the process for a brand-new house looks like this: you feed it fresh, unlabeled
+feature values  size and bedroom count for a house the model has never seen  and the trained
+model outputs a predicted label. No price was given going in; the model produces one coming out.
+new_house = {"size_sqft": 1600, "bedrooms": 3}
+predicted_price = model.predict(new_house)
+
+--- PAGE BREAK ---
+
+# predicted_price ~ $275,000
+A trained model turns unlabeled input into a predicted label.
+That's the entire point of supervised learning: train on examples where you already know the answer, so
+the model can predict the answer for cases where you don't.
+What happens when there are no labels at all
+Unsupervised learning starts from a completely different position: you have data, but nobody has
+attached correct answers to any of it. There's no "price" column, no known category, nothing to
+supervise the model with.
+Instead of predicting a label, the model's job is to find structure that was already hiding in the data 
+grouping similar things together without ever being told what the groups should be. A pile of unlabeled
+points, run through an unsupervised algorithm, comes out sorted into clusters based purely on how
+similar the points are to each other.
+
+--- PAGE BREAK ---
+
+Unlabeled points, grouped into clusters with no labels given.
+A real-world example: machine sensor data
+Say you're logging vibration and temperature readings off a set of machines on a factory floor, with no
+labels at all  nobody has marked which readings mean "healthy" or "failing." Plot vibration against
+temperature and an unsupervised algorithm can still find two distinct clusters: one group sitting at low
+temperature and high vibration, another at high temperature and low vibration.
+Two clusters emerge from unlabeled sensor readings.
+Nobody told the algorithm what those clusters mean. It found the grouping on its own, purely from how
+the data points sit relative to each other. It's now up to you  the engineer  to look at each cluster and
+interpret what it represents, maybe by pulling a few machines from each group and inspecting them.
+Why unsupervised learning exists  the real cost of labels
+
+--- PAGE BREAK ---
+
+If labels are so useful, why not just label everything? Because labeling is expensive. Someone  a
+person  has to go through raw, unlabeled data and manually attach the correct tag to each item:
+reading every document and assigning it a category, inspecting every image and marking what's in it,
+checking every transaction and flagging it as normal or fraudulent. That takes real time and real cost,
+and at large scale it's often not realistic at all.
+Turning unlabeled data into labeled data takes real time and cost.
+Unsupervised learning matters because in a huge amount of real-world data, no one has ever gone
+through and labeled it. If you want any insight at all  structure, groupings, anomalies  before you've
+paid the cost of labeling, unsupervised methods are how you get it.
+Supervised vs. unsupervised, side by side
+The core distinction: predicting a known outcome vs. finding unknown patterns.
+Supervised
+Unsupervised
+
+--- PAGE BREAK ---
+
+Data
+Labeled
+Unlabeled
+Goal
+Predict a known outcome
+Find unknown patterns
+Output
+A specific predicted value or category
+Groupings or structure
+Example
+Predicting house price
+Grouping similar machines
+Where supervised learning splits further
+Supervised learning itself branches into two families, and you'll spend real time on both of them soon:
+Supervised learning splits into Regression and Classification.
+Regression
+ the label is a continuous number (price, temperature, distance).
+Classification
+ the label is a category (cat/dog/bird, healthy/faulty, fraud/not fraud).
+You'll cover each of these as its own topic next  this lesson is only building the frame they both sit
+inside.
+Where this leaves you
+By the end of this lesson, you should be able to look at any dataset and ask one question first: does this
+data have known correct answers attached, or not? If it does, you're in supervised territory, working
+toward predicting a label. If it doesn't, you're in unsupervised territory, working toward discovering
+structure. The next lesson zooms into the first branch of supervised learning  Regression  where
+you'll build your first real model that predicts a number.
+
+--- PAGE BREAK ---
+
+The two core paths: known answers, or find patterns.

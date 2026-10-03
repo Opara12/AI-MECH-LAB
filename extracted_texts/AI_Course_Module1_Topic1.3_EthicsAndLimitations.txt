@@ -1,0 +1,106 @@
+AI MECH LAB
+AI Course  Beginner Track
+Module 1, Topic 1.3
+AI Ethics and Limitations
+
+--- PAGE BREAK ---
+
+Lesson
+You now know what AI, Machine Learning, and Deep Learning are, and you've seen real examples of them
+working well. This lesson covers the other side: what happens when these systems fail, why they fail in
+ways that are easy to miss, and what that means for you as someone who'll eventually build or deploy them.
+Why bias isn't a bug in the traditional sense
+When a rule-based system fails, it's usually because a programmer wrote a rule wrong  a bug you can
+find and fix by reading the code. Machine learning systems fail differently. They learn patterns from
+historical data, and if that data reflects a historical bias, the model doesn't correct for it  it learns the bias
+as if it were a legitimate pattern to replicate.
+Skewed or unbalanced training data produces a skewed model, and a skewed model produces unbalanced outcomes.
+Amazon found this out the hard way. It built an internal AI tool to screen job resumes, trained on ten years
+of past submissions  a period when the tech industry's applicant pool skewed heavily male. The model
+concluded, from the data, that male candidates were preferable. It began penalizing resumes containing the
+word "women's"  even in an unrelated context like "women's chess club captain"  and downgraded
+graduates of women's colleges. Nobody programmed the tool to discriminate. It learned to, because the
+historical data it was trained on already reflected that pattern, and the model's job was to find and replicate
+patterns.
+
+--- PAGE BREAK ---
+
+An AI resume screener penalizing a qualified candidate based on a learned historical pattern, not an explicit rule.
+This is the core lesson: an ML system trained on biased historical data will learn and often amplify that bias,
+even with no explicit intent from anyone involved in building it.
+When the stakes are higher than hiring
+The COMPAS algorithm, used in parts of the US court system to assess a defendant's risk of reoffending,
+was investigated by the journalism organization ProPublica and found to produce racially disparate
+outcomes  Black defendants were flagged as high-risk at nearly twice the rate of white defendants who
+did not reoffend, while white defendants who did reoffend were more often incorrectly scored as low-risk.
+The historical arrest and sentencing data used to train the model reflected existing disparities in the justice
+system, and the model reproduced them in its predictions  predictions that then influenced real
+sentencing and bail decisions.
+
+--- PAGE BREAK ---
+
+Disparity in incorrect high-risk flags produced by the COMPAS algorithm.
+A similar pattern showed up in a healthcare algorithm used across US hospitals to decide which patients
+needed extra care management. The model used past healthcare spending as a stand-in for how sick a
+patient was  a reasonable-sounding assumption on the surface. But because Black patients had
+historically received less healthcare spending due to unequal access to care (not because they were
+healthier), the algorithm concluded they needed less follow-up care than white patients with comparably
+serious conditions, at scale, across over 200 million patients.
+A cost-based priority system: using healthcare spending as a proxy for medical need.
+Notice the common thread across all three cases: none of these systems were fed an explicit rule to
+discriminate. They were fed historical data that already contained inequality, and they learned that
+
+--- PAGE BREAK ---
+
+inequality as a pattern worth repeating.
+When AI learns the wrong pattern entirely
+Bias from historical data is one failure mode. A separate, equally important one is when a model learns to
+key off something that isn't actually relevant to the problem at all  and looks accurate until it's tested
+somewhere new.
+A well-known computer vision study trained a model to tell wolves apart from huskies. It performed close to
+perfectly on its test data. But when researchers dug into why it was making its decisions, using a technique
+that visualizes which parts of an image the model is actually paying attention to, they found something
+unexpected: the model wasn't looking at the animals at all. It was checking whether the image background
+contained snow  because every wolf photo in its training set happened to be shot in a snowy setting. The
+model had learned "snow equals wolf," not "these facial features equal wolf." It got the right answer on its
+test set by complete coincidence of how that dataset happened to be composed.
+What the model actually paid attention to, versus what it should have focused on.
+A pneumonia-detection model trained on hospital X-rays ran into a version of the same problem. It
+performed at expert level in initial testing, then failed when used at a different hospital. It turned out the
+model had learned to recognize the specific style of metal markers and text fonts that different X-ray
+machines stamped onto images  and since certain machines were used more often in high-risk ICU
+settings than in routine outpatient clinics, the model was effectively predicting "which room was this X-ray
+taken in," not "what does this patient's lung tissue actually look like."
+
+--- PAGE BREAK ---
+
+A model trained to key off a machine's corner marker instead of the actual lung tissue.
+This is the practical lesson to carry forward:
+a model that performs well on its test data is not the same
+as a model that has learned the thing you actually wanted it to learn. It may have found a shortcut  a
+pattern that correlates with the right answer in your specific dataset, without being the actual cause of that
+answer. This is one of the most important and most under-appreciated limitations of machine learning, and
+it's a large part of why deep learning systems, in particular, need careful testing on genuinely new data
+before anyone trusts them in a real application.
+Where regulation currently stands
+Because failures like these have real consequences, governments have started building rules around how
+AI can be used, though there's no single global standard. Three different approaches currently coexist: the
+European Union has passed a legally binding, risk-based framework that places strict requirements 
+mandatory oversight, auditing, transparency rules  on "high-risk" AI uses like hiring and credit scoring.
+The United States has taken a more decentralized approach, relying on existing sector regulators,
+state-level rules, and voluntary frameworks rather than one sweeping federal law. China has taken a
+centralized approach focused heavily on content control for generative AI, requiring registration and security
+review for publicly released models.
+
+--- PAGE BREAK ---
+
+Three distinct regulatory approaches: the EU, the United States, and China.
+This is a fast-moving area, and the specific rules are likely to keep shifting  the pattern worth remembering is that
+meaningful oversight now exists in some form across major markets, which didn't used to be true.
+Where this leaves you
+The takeaway isn't that AI is untrustworthy  it's that AI is only as good as the data and testing behind it,
+and it fails in ways that are often invisible until someone specifically looks for them. As you move further into
+this course and start building your own models, this lesson is the one to keep returning to: check what your
+data actually represents, test on genuinely new situations, and stay skeptical of a model that looks too
+accurate too easily.
+Three habits to carry forward: check the data, test on new situations, stay skeptical.

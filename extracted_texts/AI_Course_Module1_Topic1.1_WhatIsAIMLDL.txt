@@ -1,0 +1,91 @@
+AI MECH LAB
+AI Course  Beginner Track
+Module 1, Topic 1.1
+What is AI, ML, and Deep Learning
+
+--- PAGE BREAK ---
+
+Lesson
+If you've spent any time around the word "AI" lately, you've probably heard it used to mean about five
+different things depending on who's talking. A marketer uses it to mean "smart software." A researcher uses
+it to mean something much narrower. Before you build anything, you need these terms pinned down
+precisely.
+Artificial Intelligence (AI)
+is the broadest term. It refers to any system that performs tasks which would
+normally require human intelligence  recognizing a face, understanding a sentence, deciding where to
+move a robotic arm. AI is the goal category, not a specific technique. A simple chess-playing program from
+the 1990s that follows hand-coded rules is technically AI. So is a modern system that writes essays. They
+achieve "intelligent behavior" through completely different means.
+An early rule-based chess program  AI, but no learning involved.
+Machine Learning (ML)
+is a subset of AI  specifically, AI achieved by learning patterns from data rather
+than being explicitly programmed with rules. Instead of a human writing out "if the sensor reads above X, do
+Y," you give the system a large number of examples, and it works out the pattern itself. This shift is what
+made modern AI possible: rules written by humans don't scale to the complexity of real-world problems like
+image recognition or language, but patterns learned from thousands or millions of examples can.
+
+--- PAGE BREAK ---
+
+Deep Learning (DL)
+is a subset of ML  specifically, ML done using a structure called a neural network,
+loosely inspired by how neurons connect in a brain. "Deep" refers to having many layers of these connected
+units stacked on top of each other. Deep learning is what powers most of the AI systems getting attention
+right now  image recognition, large language models, generative design tools.
+A neural network: input layer, hidden layers, output layer.
+So the relationship is a set of nested boxes:
+AI contains Machine Learning, which contains Deep
+Learning.
+The nested relationship between AI, Machine Learning, and Deep Learning.
+
+--- PAGE BREAK ---
+
+Every deep learning system is machine learning. Every machine learning system is AI. But not every AI
+system uses machine learning, and not every machine learning system uses deep learning  plenty of ML
+techniques, like decision trees or simple regression, aren't neural networks at all, and are often the better
+choice for smaller or more structured problems.
+Why this distinction matters practically, not just academically
+If someone tells you "we're adding AI to this product," that sentence alone tells you almost nothing about
+how it works, how much data it needs, or how predictable its behavior will be. Those things depend entirely
+on which box you're actually in.
+Rule-based logic vs. patterns learned from data.
+A rule-based AI system is predictable and explainable  you can point to the exact line of logic that
+produced a decision. But it's brittle: it only handles situations the programmer thought of in advance.
+A machine learning system is more flexible and can handle situations no one explicitly anticipated  but it
+needs data to learn from, and its decisions are harder to fully explain, which matters a lot in engineering
+contexts where you need to trust a system's output.
+A deep learning system is the most powerful and flexible of the three for complex, unstructured problems 
+images, language, sensor fusion  but it typically needs the most data, the most computing power, and is
+the hardest of the three to fully explain when it makes a decision.
+
+--- PAGE BREAK ---
+
+Explainability vs. flexibility trade-off across the three categories.
+A concrete example: how a system learns "cat"
+A machine learning system shown thousands of cat photos doesn't get told what a cat is  it works out the
+shared pattern across the examples itself.
+Learning "cat" from many labeled examples, rather than a hand-written rule.
+Where this shows up in engineering
+A defect-detection camera on a production line is a practical example of this whole idea in action  it's a
+machine learning (often deep learning) system trained on examples of good and defective parts, flagging
+anomalies a rule-based system would likely miss.
+
+--- PAGE BREAK ---
+
+A machine-learning-based defect detection system flagging a cracked part.
+What AI, ML, and DL are not
+None of these three things are "thinking" in the way a person thinks. A deep learning system finding a
+pattern in a million images of cats is doing sophisticated statistical pattern-matching  not developing an
+understanding of "cat-ness" the way a child does. This isn't a philosophical aside; it explains why these
+systems sometimes fail in strange, unhuman ways, a limitation you'll need to understand before you trust an
+AI system's output in any engineering application later in this course.
+What a deep learning system actually processes vs. how a human perceives the same image.
+
+--- PAGE BREAK ---
+
+Neural networks take loose inspiration from the brain  they are not a working replica of it.
+Where this leaves you
+By the end of this lesson, you should be able to look at any AI system  a chatbot, a defect-detection
+camera on a production line, a recommendation engine  and correctly place it in the nested boxes:
+rule-based AI, ML using structured data, or deep learning. That single skill is the foundation for every
+module that follows.
+Recap: AI, Machine Learning, and Deep Learning, nested.

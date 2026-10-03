@@ -1,0 +1,91 @@
+AI MECH LAB
+AI Course  Beginner Track
+Module 3, Topic 3.1
+Linear Algebra Essentials
+
+--- PAGE BREAK ---
+
+Lesson
+You've been using arrays since the NumPy lesson without necessarily thinking about what they represent
+mathematically. This lesson makes that explicit. Linear algebra is the branch of math concerned with
+vectors, matrices, and the operations between them  and it's not an abstract detour before you get to
+"real" AI work. It's the actual language the calculations inside every machine learning model are written in.
+You don't need a full semester of linear algebra to work in AI. You need a specific, small set of ideas,
+applied.
+Vectors  a list of numbers with meaning
+A vector is simply an ordered list of numbers. You've already seen this  it's exactly what a
+one-dimensional NumPy array is.
+sensor_reading = np.array([22.5, 45, 1013])
+A vector: each position carries a specific, consistent meaning.
+What makes this a vector rather than just "some numbers" is that each position means something specific
+and consistent  here, maybe temperature, humidity, and pressure, always in that order. In machine
+learning, almost everything gets represented as a vector eventually: a single data point (a house's size,
+age, and location, for a price-prediction model), a single image (every pixel's brightness value, laid out in
+sequence), a single word (represented as a list of numbers that captures its meaning, which you'll
+encounter later as "embeddings").
+Matrices  a grid of vectors
+A matrix is a two-dimensional grid of numbers  rows and columns, exactly like the 2D NumPy arrays from
+the last module.
+sensor_grid = np.array([
+[22.5, 45, 1013],
+[23.1, 47, 1012],
+[21.8, 44, 1014]
+])
+
+--- PAGE BREAK ---
+
+Stacking multiple vectors together forms a matrix.
+Here, each row could be a separate sensor reading (a vector), and stacking multiple readings together
+gives you a matrix. This is exactly how real datasets are structured  each row is one example (one house,
+one image, one sensor reading), and each column is one feature of that example (size, pixel value,
+temperature). Understanding a dataset as "a matrix where rows are examples and columns are features" is
+one of the most useful mental models you'll carry through the rest of this course.
+A real dataset viewed as a matrix: rows are examples, columns are features.
+Matrix multiplication  the operation that actually does the work
+This is the one operation worth understanding conceptually, because it's what happens, over and over,
+inside every neural network. Matrix multiplication isn't just multiplying numbers in the same position, the way
+you might multiply two arrays element by element  it's a specific operation where each output value is
+
+--- PAGE BREAK ---
+
+built from combining an entire row of one matrix with an entire column of another.
+Each output value combines an entire row from one matrix with an entire column from another.
+You don't need to hand-calculate this by hand for this course  NumPy does it for you with one function:
+result = np.dot(matrix_a, matrix_b)
+What matters is the concept, not the manual arithmetic: matrix multiplication is how a machine learning
+model combines input data with the model's internal parameters (its "weights") to produce a prediction.
+When you hear that a neural network has "millions of parameters," what's actually happening under the
+hood is enormous matrices being multiplied together, layer after layer, transforming input data step by step
+into an output  a prediction, a classification, a generated response.
+Inside a neural network: weight matrices sit between every layer, transforming data as it flows through.
+A practical caveat that matters more than the operation itself
+Matrix multiplication has one hard rule: the shapes have to match up in a specific way  the number of
+columns in the first matrix has to equal the number of rows in the second. If they don't, the operation simply
+
+--- PAGE BREAK ---
+
+fails.
+matrix_a.shape   # e.g., (3, 4)
+matrix_b.shape   # needs to be (4, something) to multiply successfully
+Valid multiplication requires matching inner dimensions  invalid multiplication simply fails.
+The inner dimensions must line up for multiplication to be possible.
+This is, in practice, one of the single most common errors you will hit once you start building actual models
+ a "shape mismatch" error. Understanding why it happens (the underlying math genuinely requires
+matching dimensions, it's not an arbitrary rule) is what turns a confusing error message into something you
+can actually debug, instead of something you just fight with by trial and error.
+Why this specific set of ideas matters for AI
+Every machine learning model, from the simplest to the most advanced, is fundamentally organizing data as
+vectors and matrices, and transforming that data through matrix operations to produce a prediction. You will
+practically never do this math by hand  libraries handle the actual computation. But understanding that
+this is what's happening underneath is what makes concepts you'll encounter later, like "model weights,"
+"training," and "neural network layers," make intuitive sense instead of feeling like magic.
+Where this leaves you
+
+--- PAGE BREAK ---
+
+By the end of this lesson, you should understand what a vector and a matrix represent conceptually, be able
+to think of a dataset as a matrix of examples and features, and understand  at a conceptual level, not a
+manual-calculation level  that matrix multiplication is the core operation combining data with a model's
+parameters, and why matching shapes matters. The next lesson, probability and statistics, adds the second
+mathematical foundation this course builds on.
+The three core ideas from this lesson: vectors, matrices, and matrix multiplication.

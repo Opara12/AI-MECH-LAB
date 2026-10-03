@@ -1,0 +1,88 @@
+AI MECH LAB
+AI Course  Beginner Track
+Module 1, Topic 1.2
+Real-World Engineering Use Cases
+
+--- PAGE BREAK ---
+
+Lesson
+The last lesson gave you the vocabulary  AI, Machine Learning, Deep Learning, nested inside each other.
+This lesson makes it concrete. Three areas where AI is actually changing how engineering gets done today:
+predictive maintenance, generative design, and industrial automation. Each one solves a different kind of
+problem, and seeing real examples will make the distinctions from the last lesson click into place.
+Predictive Maintenance
+The old way to maintain equipment is either reactive (fix it when it breaks) or scheduled (replace it on a fixed
+calendar, whether it needs it or not). Both waste money  reactive maintenance means unplanned
+downtime, and scheduled maintenance means replacing parts that still had useful life left. Predictive
+maintenance uses machine learning to solve this: sensors continuously stream data off a machine, and the
+model learns what "normal" looks like well enough to catch subtle signs of wear long before a human would
+notice.
+Three approaches to maintenance: reactive, scheduled, and predictive.
+Siemens runs a system called Senseye that processes vibration, temperature, pressure, and power data
+from manufacturing equipment, comparing it against historical baselines to catch things like early bearing
+wear weeks before failure. Rolls-Royce does something similar in the air  its aircraft engines stream
+thousands of data points per flight (exhaust temperature, blade vibration, oil pressure) back to ground
+teams, so degradation can be caught mid-flight and replacement parts are already waiting when the plane
+lands, instead of discovering a problem after touchdown.
+
+--- PAGE BREAK ---
+
+Sensor data streaming from a jet engine to a monitoring dashboard.
+Notice what kind of AI this actually is: it's machine learning, not simple rule-based logic. A rule-based
+system could flag "temperature above X," but it can't learn the subtle combination of a dozen small
+variances that, together, predict a bearing failure three weeks out. That pattern only shows up from data.
+Generative Design
+Generative design flips the usual design process. Instead of an engineer sketching a shape and then
+checking whether it holds up under load, you give the AI the constraints  maximum dimensions, load
+limits, material options, manufacturing method  and it generates thousands of possible structural
+geometries that satisfy them, then narrows down to the most efficient ones.
+The generative design process: constraints in, thousands of options generated, best design selected.
+Airbus used this approach to redesign a cabin partition wall, letting the algorithm generate bio-inspired
+lattice structures within the required safety and load constraints. The result was dramatically lighter than a
+traditionally engineered part, without giving up structural strength  and weight savings on an aircraft
+
+--- PAGE BREAK ---
+
+compound, because lighter parts mean less fuel burned over the aircraft's lifetime. General Motors used the
+same category of tool to redesign a seatbelt bracket, and the algorithm consolidated what used to be eight
+separately welded parts into a single 3D-printed piece that was both lighter and stronger than the original
+assembly.
+Part consolidation: eight welded pieces replaced by a single generatively-designed part.
+This is a different kind of AI use than predictive maintenance. It's not analyzing sensor data over time  it's
+exploring a massive design space that would be impractical for a human engineer to search manually, and
+returning options a person likely wouldn't have arrived at through conventional design instinct.
+Industrial Automation
+This is where AI moves from analysis into real-time control and decision-making on the factory floor. BMW
+uses deep-learning computer vision along its assembly lines  cameras capture every vehicle chassis
+moving down the line, and the model is trained to tell the difference between actual defects (a micro-crack,
+a paint flaw) and harmless things like dust, at a speed and consistency no human inspector could match
+doing the same job all day.
+
+--- PAGE BREAK ---
+
+Computer vision inspecting a vehicle chassis for structural defects in real time.
+Siemens applies a related idea inside its own electronics manufacturing  at its Amberg plant, machine
+learning models continuously adjust soldering speed and thermal profiles in real time based on humidity,
+temperature, and small variations in incoming component batches, correcting the process before a defect
+happens rather than catching it afterward.
+Real-time process adjustment based on environmental sensor readings.
+Foxconn takes it a step further, using AI-driven digital twins to coordinate an entire factory's robots,
+conveyors, and workload balancing dynamically, instead of running on a fixed, pre-programmed sequence.
+
+--- PAGE BREAK ---
+
+A digital twin coordinating robots, conveyors, and workload across an entire factory floor.
+What ties these three together
+Look back at the AI / ML / Deep Learning distinction from the last lesson, and you'll see all three of these
+categories lean heavily on machine learning and deep learning specifically  not rule-based AI. That's not
+a coincidence. The problems in this lesson (subtle sensor patterns, enormous design spaces, real-time
+visual inspection) are exactly the kind of problems that are too complex to hand-code rules for, and exactly
+the kind where learning from data outperforms a programmer's best guess at the rules.
+By the end of this lesson, you should be able to look at a real AI application in an engineering context and
+identify not just what it does, but which category of problem it's solving  is it forecasting a future state from
+historical data, exploring a design space, or making real-time decisions from live sensor or visual input?
+That framing will carry through the rest of this course.
+
+--- PAGE BREAK ---
+
+The three categories from this lesson, side by side.
